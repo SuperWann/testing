@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:testing/pages/starterPage/starterPageSatu.dart';
 import 'package:testing/pages/starterPage/starterPageTiga.dart';
 import 'package:testing/widgets/button.dart';
@@ -30,13 +31,16 @@ class StarterPageDua extends StatelessWidget {
                       Text(
                         'Selamat datang di\nBangun Kebun!',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'Montserrat',
                           color: Color(0xFF828282),
                         ),
                       ),
-                      Image.asset('assets/images/logo-hijau.png', height: 50),
+                      Image.asset(
+                        'assets/images/logo-hijau.png',
+                        height: 40.sp,
+                      ),
                     ],
                   ),
 
@@ -66,17 +70,17 @@ class StarterPageDua extends StatelessWidget {
                         'Belajar bagaimana berpenghasilan dari hasil kebunmu.',
                         style: TextStyle(
                           fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 36,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 40.sp,
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 15.h),
                       Text(
                         'Menjembatani masyarakat untuk belajar, bertransaksi, dan berinteraksi dalam menjaga ketahanan pangan. (ganti)',
                         style: TextStyle(
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: 16.sp,
                         ),
                       ),
                     ],

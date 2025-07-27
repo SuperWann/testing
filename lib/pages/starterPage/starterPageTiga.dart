@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testing/pages/authPage/registrasiPage.dart';
@@ -17,154 +18,122 @@ class StarterPageTiga extends StatefulWidget {
 }
 
 class _StarterPageTigaState extends State<StarterPageTiga> {
-  var index = 0;
-
-  Future<bool> _onWillPop() async {
-    Fluttertoast.showToast(
-      msg: "Mohon pilih kurir terlebih dahulu",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
-      timeInSecForIosWeb: 1,
-      backgroundColor: Color(0xFFC5172E),
-      textColor: Colors.white,
-      fontSize: 16.0,
-      fontAsset: 'assets/fonts/Montserrat-Medium.ttf',
-    );
-
-    Future.delayed(const Duration(seconds: 5), () {
-      setState(() {
-        index = 0;
-      });
-    });
-
-    if (index > 1) {
-      SystemNavigator.pop();
-      return false;
-    }
-
-    return false;
-  }
-
   @override
-  Widget build(BuildContext context) {    
-    return WillPopScope(
-      onWillPop: _onWillPop,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          margin: const EdgeInsets.only(
-            top: 60,
-            bottom: 40,
-            left: 20,
-            right: 20,
-          ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Selamat datang di\nBangun Kebun!',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Montserrat',
-                            color: Color(0xFF828282),
-                          ),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        margin: const EdgeInsets.only(top: 60, bottom: 40, left: 20, right: 20),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Selamat datang di\nBangun Kebun!',
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Montserrat',
+                          color: Color(0xFF828282),
                         ),
-                        Image.asset('assets/images/logo-hijau.png', height: 50),
-                      ],
-                    ),
-
-                    Container(
-                      margin: const EdgeInsets.only(top: 40, bottom: 40),
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 5,
-                            offset: Offset(-5, 5),
-                          ),
-                        ],
                       ),
-                      child: Image.asset(
-                        'assets/images/starterTiga.jpg',
-                        height: 300,
-                        fit: BoxFit.cover,
+                      Image.asset(
+                        'assets/images/logo-hijau.png',
+                        height: 40.sp,
                       ),
-                    ),
+                    ],
+                  ),
 
-                    Column(
-                      children: [
-                        Text(
-                          'Belajar bagaimana membantu sesama dalam kebaikan.',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w700,
-                            fontSize: 36,
-                          ),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          'Menjembatani masyarakat untuk belajar, bertransaksi, dan berinteraksi dalam menjaga ketahanan pangan. (ganti)',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 16,
-                          ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 40, bottom: 40),
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 5,
+                          offset: Offset(-5, 5),
                         ),
                       ],
                     ),
-                  ],
-                ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: LongButtonWithOpacity(
-                        text: "Kembali",
-                        color: '#000000',
-                        colorText: '#828282',
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            PageSlideRight(child: const StarterPageDua()),
-                          );
-                        },
-                      ),
+                    child: Image.asset(
+                      'assets/images/starterTiga.jpg',
+                      height: 300,
+                      fit: BoxFit.cover,
                     ),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: LongButton(
-                        text: "Lanjut",
-                        color: '#007B29',
-                        colorText: '#FFFFFF',
-                        onPressed: () async {
-                          // SharedPreferences prefs = await SharedPreferences.getInstance();
-                          // await prefs.setBool('isRead', true);
+                  ),
 
-                          Navigator.pushAndRemoveUntil(
-                            context,
-                            PageSlideLeft(child: const RegistrasiPage()),
-                            (route) => false,
-                          );
-                        },
+                  Column(
+                    children: [
+                      Text(
+                        'Belajar bagaimana membantu sesama dalam kebaikan.',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 40.sp,
+                        ),
                       ),
+                      SizedBox(height: 15.h),
+                      Text(
+                        'Menjembatani masyarakat untuk belajar, bertransaksi, dan berinteraksi dalam menjaga ketahanan pangan. (ganti)',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16.sp,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: LongButtonWithOpacity(
+                      text: "Kembali",
+                      color: '#000000',
+                      colorText: '#828282',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageSlideRight(child: const StarterPageDua()),
+                        );
+                      },
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: LongButton(
+                      text: "Lanjut",
+                      color: '#007B29',
+                      colorText: '#FFFFFF',
+                      onPressed: () async {
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        await prefs.setBool('isRead', true);
+
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          PageSlideLeft(child: const RegistrasiPage()),
+                          (route) => false,
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

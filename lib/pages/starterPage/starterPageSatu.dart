@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:testing/pages/starterPage/starterPageDua.dart';
 import 'package:testing/widgets/button.dart';
 import 'package:testing/widgets/customPageRoute.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StarterPageSatu extends StatelessWidget {
   static const routeName = '/starterPageSatu';
@@ -29,13 +30,16 @@ class StarterPageSatu extends StatelessWidget {
                       Text(
                         'Selamat datang di\nBangun Kebun!',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'Montserrat',
                           color: Color(0xFF828282),
                         ),
                       ),
-                      Image.asset('assets/images/logo-hijau.png', height: 50),
+                      Image.asset(
+                        'assets/images/logo-hijau.png',
+                        height: 50.sp,
+                      ),
                     ],
                   ),
 
@@ -65,17 +69,17 @@ class StarterPageSatu extends StatelessWidget {
                         'Belajar bagaimana membangun kebunmu sendiri.',
                         style: TextStyle(
                           fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 36,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 40.sp,
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 15.h),
                       Text(
                         'Menjembatani masyarakat untuk belajar, bertransaksi, dan berinteraksi dalam menjaga ketahanan pangan. (ganti)',
                         style: TextStyle(
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: 16.sp,
                         ),
                       ),
                     ],
