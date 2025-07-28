@@ -46,9 +46,9 @@ class _NavbarState extends State<Navbar> {
               });
             },
             items: NavBarConfig.mainNavItems,
-            activeColor: Colors.green,
+            activeColor: Color(0xFF007B29),
             backgroundColor: Colors.white,
-            bottomMargin: 20,
+            bottomMargin: 30,
           ),
         ],
       ),

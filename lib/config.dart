@@ -5,31 +5,35 @@ class ApiConfig {
   static const String baseUrl = '';
 }
 
+class GeminiApiKey{
+  static const String apiKey = 'AIzaSyBs4oYKk64AyQsNEF4aZ4Fa1ElYgQPq6k0';
+}
+
 class NavBarConfig {
   static List<NavBarItem> get mainNavItems => [
     NavBarItem(
-      icon: Icons.home_outlined,
-      activeIcon: Icons.home,
+      icon: Icons.home_rounded,
+      activeIcon: Icons.home_rounded,
       label: 'Home',
     ),
     NavBarItem(
-      icon: Icons.shopping_bag_outlined,
-      activeIcon: Icons.shopping_bag,
+      icon: Icons.shopping_bag_rounded,
+      activeIcon: Icons.shopping_bag_rounded,
       label: 'Shop',
     ),
     NavBarItem(
-      icon: Icons.menu_book_outlined,
-      activeIcon: Icons.menu_book,
+      icon: Icons.menu_book_rounded,
+      activeIcon: Icons.menu_book_rounded,
       label: 'Articles',
     ),
     NavBarItem(
-      icon: Icons.people_outline,
-      activeIcon: Icons.people,
+      icon: Icons.people_rounded,
+      activeIcon: Icons.people_rounded,
       label: 'Community',
     ),
     NavBarItem(
-      icon: Icons.person_outline,
-      activeIcon: Icons.person,
+      icon: Icons.person_rounded,
+      activeIcon: Icons.person_rounded,
       label: 'Profile',
     ),
   ];

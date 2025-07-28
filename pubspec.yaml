@@ -38,6 +38,9 @@ dependencies:
   shared_preferences: ^2.5.3
   fluttertoast: ^8.2.12
   flutter_screenutil: ^5.9.3
+  sqflite: ^2.4.2
+  http: ^1.4.0
+  intl: ^0.20.2
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +71,7 @@ flutter:
     - assets/images/starterDua.jpg
     - assets/images/starterTiga.jpg
     - assets/images/logo-hijau.png
+    - assets/images/logo-ai-chat.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
