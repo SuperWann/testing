@@ -5,10 +5,6 @@ class ApiConfig {
   static const String baseUrl = '';
 }
 
-class GeminiApiKey{
-  static const String apiKey = 'AIzaSyBs4oYKk64AyQsNEF4aZ4Fa1ElYgQPq6k0';
-}
-
 class NavBarConfig {
   static List<NavBarItem> get mainNavItems => [
     NavBarItem(

@@ -17,7 +17,7 @@ class ChatbotProvider with ChangeNotifier {
   Future<void> getAllPercakapan() async {
     _percakapan = await chatbotService.getAllPercakapan();
     notifyListeners();
-    print(_percakapan);
+    // print(_percakapan);
   }
 
   Future<void> sendPertanyaan(String pertanyaan, BuildContext context) async {

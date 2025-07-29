@@ -1,13 +1,13 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:sqflite/sqflite.dart';
-import 'package:testing/config.dart';
 import 'package:testing/helpers/dbHelper.dart';
 import 'package:testing/models/percakapan.dart';
 
 class ChatbotService {
   final DbHelper dbHelper = DbHelper();
-  final String apiKeyGemini = GeminiApiKey.apiKey.trim();
+  final String apiKeyGemini = dotenv.env['GEMINI_API_KEY']!;
 
   Future<List<ModelPercakapan>>? getAllPercakapan() async {
     final db = await dbHelper.database;
@@ -15,7 +15,6 @@ class ChatbotService {
       'percakapan',
       orderBy: 'timestamp ASC',
     );
-    print(data.map((data) => ModelPercakapan.fromMap(data)).toList());
     return data.map((data) => ModelPercakapan.fromMap(data)).toList();
   }
 
@@ -49,7 +48,7 @@ class ChatbotService {
         ],
       }),
     );
-    print(result.body);
+    // print(result.body);
     return result;
   }
 }

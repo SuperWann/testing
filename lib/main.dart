@@ -11,20 +11,22 @@ import 'package:testing/pages/starterPage/splashPage.dart';
 import 'package:testing/pages/starterPage/starterPageSatu.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:testing/providers/chatbotProvider.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
     ),
   );
-  runApp(MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => ChatbotProvider()),
-      ],
+  await dotenv.load(fileName: ".env");
+  runApp(
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => ChatbotProvider())],
       child: MyApp(),
-    ),);
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
