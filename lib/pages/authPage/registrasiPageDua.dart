@@ -62,10 +62,12 @@ class RegistrasiPageDua extends StatelessWidget {
 
               SizedBox(height: 40.h),
               LongButton(
-                text: 'Lanjutkan',
+                text: 'Daftar',
                 color: '007B29',
                 colorText: 'FFFFFF',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/navbar');
+                },
               ),
             ],
           ),
