@@ -46,7 +46,7 @@ class _StarterPageTigaState extends State<StarterPageTiga> {
                       ),
                       Image.asset(
                         'assets/images/logo-hijau.png',
-                        height: 40.sp,
+                        height: 50.sp,
                       ),
                     ],
                   ),

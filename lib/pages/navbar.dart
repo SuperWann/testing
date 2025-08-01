@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:testing/config.dart';
 import 'package:testing/pages/articlePage/listArticlePage.dart';
 import 'package:testing/pages/communityPage/listCommunityPage.dart';
@@ -31,24 +32,33 @@ class _NavbarState extends State<Navbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // extendBody penting untuk membuat navbar float
+      resizeToAvoidBottomInset:
+          false, // Mencegah layout berubah saat keyboard muncul
       extendBody: true,
       body: Stack(
         children: [
           // Pages content
           IndexedStack(index: _currentIndex, children: _pages),
           // Floating navbar overlay
-          FloatingNavBar(
-            currentIndex: _currentIndex,
-            onTap: (index) {
-              setState(() {
-                _currentIndex = index;
-              });
-            },
-            items: NavBarConfig.mainNavItems,
-            activeColor: Color(0xFF007B29),
-            backgroundColor: Colors.white,
-            bottomMargin: 30,
+          Positioned(
+            left: 20.w,
+            right: 20.w,
+            bottom:
+                MediaQuery.of(context).viewInsets.bottom > 0
+                    ? 40.h + MediaQuery.of(context).viewInsets.bottom
+                    : 40.h, // Menyesuaikan posisi navbar saat keyboard muncul
+            child: FloatingNavBar(
+              currentIndex: _currentIndex,
+              onTap: (index) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+              items: NavBarConfig.mainNavItems,
+              activeColor: Color(0xFF007B29),
+              backgroundColor: Colors.white,
+              bottomMargin: 16, // Margin diatur oleh Positioned
+            ),
           ),
         ],
       ),

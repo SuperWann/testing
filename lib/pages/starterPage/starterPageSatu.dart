@@ -38,7 +38,7 @@ class StarterPageSatu extends StatelessWidget {
                       ),
                       Image.asset(
                         'assets/images/logo-hijau.png',
-                        height: 50.sp,
+                        height: 40.sp,
                       ),
                     ],
                   ),
