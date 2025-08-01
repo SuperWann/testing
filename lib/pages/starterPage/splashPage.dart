@@ -14,6 +14,7 @@ class SplashPage extends StatelessWidget {
 
       if (isRead) {
         Navigator.pushReplacementNamed(context, '/loginPage');
+        
       } else {
         Navigator.pushReplacementNamed(context, '/starterPageSatu');
       }

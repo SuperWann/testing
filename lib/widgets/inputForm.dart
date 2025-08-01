@@ -15,9 +15,54 @@ class InputFormWithHintText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      maxLines: null,
       controller: controller,
       enableSuggestions: true,
-      keyboardType: type,
+      keyboardType: TextInputType.multiline,
+      decoration: InputDecoration(
+        hintText: text,
+        hintStyle: TextStyle(
+          fontFamily: 'Montserrat',
+          fontWeight: FontWeight.w500,
+          color: Colors.black26,
+        ),
+        filled: true,
+        fillColor: Color.fromARGB(255, 233, 233, 233),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide.none,
+        ),
+      ),
+      style: TextStyle(
+        fontFamily: 'Montserrat',
+        fontWeight: FontWeight.w500,
+        color: Colors.black,
+      ),
+    );
+  }
+}
+
+class InputFormWithHintTextMaxlines extends StatelessWidget {
+  final String text;
+  final TextInputType type;
+  final TextEditingController controller;
+  final int? maxlines;
+
+  const InputFormWithHintTextMaxlines({
+    super.key,
+    required this.type,
+    required this.text,
+    required this.controller,
+    this.maxlines, required bool enabled,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      maxLines: maxlines ?? null,
+      controller: controller,
+      enableSuggestions: true,
+      keyboardType: TextInputType.multiline,
       decoration: InputDecoration(
         hintText: text,
         hintStyle: TextStyle(
